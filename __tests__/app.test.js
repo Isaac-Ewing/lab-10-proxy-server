@@ -49,5 +49,15 @@ describe('app routes', () => {
 
       expect(data.body).toEqual(expectation);
     });
+
+    test('returns reviews', async() => {
+      const expected = [{ name: 'The Grove Cafe & Market', rating: 4.5, price: '$$', image_url: 'https://s3-media4.fl.yelpcdn.com/bphoto/ym4K6aYAZzfr3VGfE17wzw/o.jpg' }];
+      const data = await fakeRequest(app)
+        .get('/reviews?latitude=35.0841034&longitude=-106.6509851')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect([data.body[0]]).toEqual(expected);
+    });
   });
 });
