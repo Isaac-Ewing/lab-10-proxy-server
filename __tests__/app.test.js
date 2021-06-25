@@ -11,7 +11,7 @@ describe('app routes', () => {
     test('returns location', async() => {
 
       const expectation = {
-        formatted_search: 'Albuquerque, Bernalillo County, New Mexico, USA',
+        formatted_query: 'Albuquerque, Bernalillo County, New Mexico, USA',
         latitude: '35.0841034',
         longitude: '-106.6509851'
       };
